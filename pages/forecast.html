@@ -1,0 +1,38 @@
+
+<p>
+	<a href="#/">Back to Search</a>
+</p>
+
+Forecast for 
+<b>{{city}}</b>
+
+<hr/>
+Select No of Days:<a href="#/forecast/2" ng-class="{'bg-primary':days==='2'}"> 2 </a>|<a href="#/forecast/5" ng-class="{'bg-primary':days==='5'}"> 5 </a>|<a href="#/forecast/7" ng-class="{'bg-primary':days==='7'}"> 7 </a>
+
+<hr/>
+<div>
+	<div class="row" ng-repeat="w in weatherResult.list">
+
+		<div class="col-md-12">
+			
+
+			<div class="panel panel-primary">
+				
+				<div class="panel-heading">
+				<h3 class="panel-title"> {{w.dt*1000 |date:"dd MMM yyyy" }}</h3>
+					
+				</div>
+
+			<div class="panel-body"> 
+			Day time Temperature:{{convertToFarhenheit(w.temp.day)}}<hr>
+			 Minimum Temperature:{{convertToFarhenheit(w.temp.min)}}<hr>
+			 Max Temperature: {{convertToFarhenheit(w.temp.max)}}
+
+			</div>
+
+			
+	</div>
+
+	</div>
+
+</div>
